@@ -104,6 +104,9 @@ func main() {
 	bot.Handle(tele.OnVoice, h.Count)
 	bot.Handle(tele.OnSticker, h.Count)
 
+	bot.Handle("/poll_create", h.CreatePoll)
+	bot.Handle("/poll_close", h.ClosePoll)
+
 	slog.Info("up and listen")
 	bot.Start()
 }
